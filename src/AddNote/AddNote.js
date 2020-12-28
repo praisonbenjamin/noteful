@@ -69,11 +69,6 @@ class AddNote extends React.Component {
     this.setModified();
   }
 
-  validateName = () => {
-    if (this.state.name === '') {
-      return true;
-    }
-  };
 
   render() {
     return (
@@ -86,7 +81,7 @@ class AddNote extends React.Component {
           <label htmlFor="#name">Note name:</label>
           <br />
           <input id="name" onChange={(e) => this.formUpdate(e)}></input>
-          {this.validateName() && this.state.touched && (
+          {!(this.state.name.length > 0) && this.state.touched && (
             <p style={{ color: 'red' }}>
               ^The name field must not be left blank
             </p>
@@ -114,7 +109,12 @@ class AddNote extends React.Component {
           </select>
           <br />
           <div className="submit-note-div">
-            <button className="submit-note" disabled={this.validateName()}>
+            <button className="submit-note" 
+            disabled={
+              !(this.state.name.length > 0) ||
+              !(this.state.content.length > 0) ||
+              !(this.state.folderId.length > 0)
+            }>
               Submit New Note
             </button>
           </div>

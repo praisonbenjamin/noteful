@@ -52,9 +52,11 @@ class AddFolder extends React.Component {
         >
           <label htmlFor="#add-folder">Folder Name:</label>
           <br />
-          <input id="add-folder" onChange={this.setFolderName}></input>
+          <input id="add-folder" onChange={this.setFolderName} ></input>
           <br />
-          <button className="submit-folder">Submitr</button>
+          <button className="submit-folder" 
+          disabled={!(this.state.folderName.length > 0)} >
+          Submit</button>
         </form>
       </div>
     );

@@ -1,6 +1,7 @@
 import React from 'react';
 import { format } from 'date-fns';
 import AppContext from '../AppContext';
+import PropTypes from "prop-types";
 
 class Note extends React.Component {
   static contextType = AppContext;
@@ -51,6 +52,11 @@ class Note extends React.Component {
       </section>
     );
   }
+}
+
+Note.prototypes={
+  history: PropTypes.object.isRequired,
+  match: PropTypes.object
 }
 
 export default Note;

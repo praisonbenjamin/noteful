@@ -1,5 +1,6 @@
 import React from 'react';
 import AppContext from '../AppContext';
+import PropTypes from "prop-types";
 
 class NoteSideBar extends React.Component {
   static contextType = AppContext;
@@ -24,6 +25,10 @@ class NoteSideBar extends React.Component {
       </div>
     );
   }
+}
+NoteSideBar.prototypes={
+  history: PropTypes.object.isRequired,
+  match: PropTypes.object
 }
 
 export default NoteSideBar;

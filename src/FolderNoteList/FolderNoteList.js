@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { format } from 'date-fns';
 import AppContext from '../AppContext';
+import PropTypes from "prop-types";
 
 class FolderNoteList extends React.Component {
   static contextType = AppContext;
@@ -68,5 +69,10 @@ class FolderNoteList extends React.Component {
     );
   }
 }
+
+FolderNoteList.propTypes = {
+  match: PropTypes.object,
+};
+
 
 export default FolderNoteList;

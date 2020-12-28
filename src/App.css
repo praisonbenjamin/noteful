@@ -1,7 +1,6 @@
 header {
     text-align: center;
     background-color: black;
-    color: blanchedalmond;
   }
   
   h1 {
@@ -41,12 +40,11 @@ header {
   
   .folder-link:hover {
     background-color: brown;
-    color: white;
+    
   }
   
   .header {
     background-color: black;
-    color: blanchedalmond;
 
 }
 /* add folder page styles */
